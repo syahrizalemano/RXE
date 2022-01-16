@@ -71,7 +71,7 @@ async def typewriter(typew):
 
 CMD_HELP.update(
     {
-        "animasi2": "𝑹𝑿𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫: `.lipkoko;`\
+        "animasi2": "𝑹𝑿𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫: `.lipkol;`\
     \n↳ : slipcrot\
     \n\n𝑹𝑿𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫: `.idns`\
     \n↳ : Coba aja.\

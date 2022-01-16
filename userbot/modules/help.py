@@ -26,14 +26,19 @@ async def help(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("`𝑹𝑿𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫` **ERROR**")
+            await event.edit("`Command` **ERROR*")
             await asyncio.sleep(200)
             await event.delete()
     else:
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\\ *  "
-        await event.edit("**RXE**\n\n")
+            string += "`\t 🔰  "
+        await event.edit(
+            "**RXE USERBOT**\n\n"
+            f"**RXE USER {DEFAULTUSER}**\n**RXE MODULE : {len(modules)}**\n\n"
+            "**• RXE MENU :**\n"
+            f"◉ {string}◉\n\n✐ **CATATAN :**  `.help animasi`\n✐  support : @rxesupport"
+        )
         await asyncio.sleep(1000)
         await event.delete()

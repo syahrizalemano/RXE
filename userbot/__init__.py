@@ -481,7 +481,7 @@ with bot:
                 u = await event.client.get_entity(event.chat_id)
                 c = await event.client.get_entity(event.user_id)
                 await event.reply(
-                   f"** RXE **\n"
+                    f"** RXE **\n"
                     f"[{get_display_name(u)}](tg: // user?id={u.id})\n"
                     f"────────────────────\n"
                     f"₰ ** RXE USER: ** [{get_display_name(c)}](tg: // user?id={c.id})\n"
@@ -765,7 +765,7 @@ with bot:
                     f"CACHE DATA :\n"
                     f".update deploy\n"
                     f"UNTUK UPDATE RXE\n\n"
-                    )
+                )
                 await event.edit(
                     text,
                     file=roselogo,
@@ -825,7 +825,7 @@ with bot:
                     f"💫{AppMinutes}**𝙼𝙴𝙽𝙸𝚃**"
                     f"💫{AppPercentage}**%**]"
                     f"╰──────────────────────────────────╯\n"
-                    
+
                     "──────────────────────────────────\n"
                     "**𝑩𝑨𝑻𝑨𝑺 𝑷𝑬𝑵𝑮𝑮𝑼𝑵𝑨𝑨𝑵 𝑹𝑿𝑬 𝑩𝑼𝑳𝑨𝑵 𝑰𝑵𝑰:**\n"
                     "──────────────────────────────────\n"
@@ -834,7 +834,7 @@ with bot:
                     f"**𝑹𝑿𝑬 𝑼𝑺𝑬𝑹 :** {ALIVE_NAME}"
                     f"**𝑴𝑨𝑺𝑨 𝑨𝑲𝑻𝑰𝑭 𝑹𝑿𝑬 𝑩𝑼𝑳𝑨𝑵 𝑰𝑵𝑰**{day}**𝑯𝑨𝑹𝑰**"
                     f"╰──────────────────────────────────╯\n"
-                    
+
                     "╔═.✾. ══════╗\n"
                     "  **𝑹-𝑿-𝑬**"
                     "╚═══════.✾. ═╝\n"
@@ -909,16 +909,21 @@ with bot:
                     link_preview=True,
                 )
             else:
-                result = builder.article(" **𝑹𝑿𝑬**",
-                                         text="""𝑹𝑿𝑬 HANDLER""",
-                                         buttons=[[custom.Button.url("EZZRA​",
-                                                                     "https://t.me/ezzraez"),
-                                                   custom.Button.url("RAHKII​",
-                                                                     "https://t.me/rahkissyou"),
-                                                   ],
-                                                  ],
-                                         link_preview=False,
-                                         )
+                result = builder.article(
+                    " **𝑹𝑿𝑬**",
+                    text="""𝑹𝑿𝑬 HANDLER""",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "EZZRA​",
+                                "https://t.me/ezzraez"),
+                            custom.Button.url(
+                                "RAHKII​",
+                                "https://t.me/rahkissyou"),
+                        ],
+                    ],
+                    link_preview=False,
+                )
             await event.answer([result] if result else None)
 
         @ tgbot.on(
@@ -968,7 +973,7 @@ with bot:
                 (custom.Button.inline("Open Menu", data="open_plugin"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
-        
+
         @ tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")

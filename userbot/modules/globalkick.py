@@ -25,9 +25,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit(
-                f"`{ALIVE_NAME}`: **ID ATAU SERNAME PENGGUNANYA MANA!**"
-            )
+            await event.edit(f"`{ALIVE_NAME}`: **ID ATAU SERNAME PENGGUNANYA MANA!**")
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -89,7 +87,7 @@ async def gspide(rk):
     except BaseException:
         return await rkp.edit(f"`{ALIVE_NAME}`, **Kesalahan! Pengguna tidak dikenal.**")
     if user:
-        if user.id == 1837386113 :
+        if user.id == 1837386113:
             return await rkp.edit(
                 f"`{ALIVE_NAME}`, SEBENTAR, DIA ADALAH PEMBUAT SAYA. PERINTAH GAGAL"
             )

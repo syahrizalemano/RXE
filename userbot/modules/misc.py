@@ -67,9 +67,7 @@ async def killdabot(event):
     await asyncio.sleep(7)
     await event.delete()
     if BOTLOG:
-        await event.client.send_message(
-            BOTLOG_CHATID, "#SHUTDOWN \n" "`RXE OFF`"
-        )
+        await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n" "`RXE OFF`")
     await bot.disconnect()
 
 
@@ -91,9 +89,7 @@ async def killdabot(event):
 
 @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
-    await e.edit(
-        "\n[RXE](https://github.com/syahrizalemano/RXE/blob/RXE/README.md)"
-    )
+    await e.edit("\n[RXE](https://github.com/syahrizalemano/RXE/blob/RXE/README.md)")
 
 
 @register(outgoing=True, pattern="^.repeat (.*)")

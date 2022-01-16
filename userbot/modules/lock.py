@@ -161,9 +161,7 @@ async def rem_locks(event):
             await event.edit("`MANA YANG MAU DI UNLOCK??`")
             return
         else:
-            await event.edit(
-                f"`ITU GA KEKUNCI TOLOL` `{input_str}`"
-            )
+            await event.edit(f"`ITU GA KEKUNCI TOLOL` `{input_str}`")
             return
 
     unlock_rights = ChatBannedRights(
@@ -185,9 +183,7 @@ async def rem_locks(event):
                 peer=peer_id, banned_rights=unlock_rights
             )
         )
-        await event.edit(
-            f"`WOII {what} NIH GUA BUKA!`"
-        )
+        await event.edit(f"`WOII {what} NIH GUA BUKA!`")
     except BaseException as e:
         await event.edit(f"`LAH SI ANJING LU ADMIN?`\n**Kesalahan:** {str(e)}")
         return

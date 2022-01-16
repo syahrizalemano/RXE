@@ -106,10 +106,7 @@ async def permitpm(event):
                 COUNT_PM[event.chat_id] = COUNT_PM[event.chat_id] + 1
 
             if COUNT_PM[event.chat_id] > PM_LIMIT:
-                await event.respond(
-                    "`𝘈𝘌𝘓𝘈𝘏 𝘛𝘖𝘓𝘖𝘓`\n"
-                    f"`𝘒𝘌 𝘉𝘓𝘖𝘒 𝘒𝘈𝘕`"
-                )
+                await event.respond("`𝘈𝘌𝘓𝘈𝘏 𝘛𝘖𝘓𝘖𝘓`\n" f"`𝘒𝘌 𝘉𝘓𝘖𝘒 𝘒𝘈𝘕`")
 
                 try:
                     del COUNT_PM[event.chat_id]
@@ -197,9 +194,7 @@ async def notifoff(noff_event):
     except AttributeError:
         return await noff_event.edit("`Running on Non-SQL mode!`")
     addgvar("NOTIF_OFF", True)
-    await noff_event.edit(
-        "`Notifikasi Pesan Pribadi Tidak Disetujui,!`"
-    )
+    await noff_event.edit("`Notifikasi Pesan Pribadi Tidak Disetujui,!`")
 
 
 @register(outgoing=True, pattern=r"^\.notifon$")
@@ -253,9 +248,7 @@ async def approvepm(apprvpm):
     except IntegrityError:
         return await apprvpm.edit("`𝘗𝘌𝘚𝘈𝘕 𝘋𝘐 𝘚𝘌𝘛𝘜𝘑𝘜𝘐`")
 
-    await apprvpm.edit(
-        f"`Hai` [{name0}](tg://user?id={uid}) `𝘈𝘗𝘗𝘙𝘖𝘝𝘌`"
-    )
+    await apprvpm.edit(f"`Hai` [{name0}](tg://user?id={uid}) `𝘈𝘗𝘗𝘙𝘖𝘝𝘌`")
     await apprvpm.delete(getmsg)
     await message.delete()
 
@@ -416,12 +409,8 @@ async def permitpm(event):
     chats = await event.get_chat()
     if event.is_private:
         if not pm_permit_sql.is_approved(chats.id):
-            pm_permit_sql.approve(
-                chats.id, f"`PESAN MASUK DARI {ALIVE_NAME}`"
-            )
-            await borg.send_message(
-                chats, f"**{DEFAULTUSER} PESAN DITERIMA**"
-            )
+            pm_permit_sql.approve(chats.id, f"`PESAN MASUK DARI {ALIVE_NAME}`")
+            await borg.send_message(chats, f"**{DEFAULTUSER} PESAN DITERIMA**")
 
 
 CMD_HELP.update(

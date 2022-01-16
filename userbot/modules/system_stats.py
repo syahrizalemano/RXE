@@ -167,16 +167,9 @@ async def bot_ver(event):
         stdout, stderr = await rev.communicate()
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
-        await event.edit(
-            "**RXE** \n "
-            f"heads/RXE"
-            "\n**⚜-**UPDATE:**\n "
-            f"{revout}"
-        )
+        await event.edit("**RXE** \n " f"heads/RXE" "\n**⚜-**UPDATE:**\n " f"{revout}")
     else:
-        await event.edit(
-            "'v1.beta.4'!"
-        )
+        await event.edit("'v1.beta.4'!")
 
 
 @register(outgoing=True, pattern=r"^\.pip(?: |$)(.*)")

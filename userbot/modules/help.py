@@ -33,9 +33,7 @@ async def help(event):
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\ *  "
-        await event.edit(
-            "**RXE**\n\n"
-        )
+            string += "`\\ *  "
+        await event.edit("**RXE**\n\n")
         await asyncio.sleep(1000)
         await event.delete()

@@ -31,9 +31,7 @@ async def get_full_user(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit(
-                "`ERROR` BERITAHU @ezzraez @rahkissyou", str(err)
-            )
+            return await event.edit("`ERROR` BERITAHU @ezzraez @rahkissyou", str(err))
     return user_obj, extra
 
 
@@ -137,9 +135,7 @@ async def gben(userbot):
         await dark.edit(f"`Mohon Balas Ke Pesan`")
     try:
         if gmute(user.id) is False:
-            return await dark.edit(
-                f"**USER SUDAH DI GLOBAL BAN.**"
-            )
+            return await dark.edit(f"**USER SUDAH DI GLOBAL BAN.**")
     except BaseException:
         pass
     return await dark.edit(
@@ -158,9 +154,7 @@ async def gunben(userbot):
     else:
         dark = await dc.edit("`PERINTAH PEMBATALAN BERJALAN`")
     me = await userbot.client.get_me()
-    await dark.edit(
-        f"`PERINTAH PEMBATALAN DI MULAI!!!`"
-    )
+    await dark.edit(f"`PERINTAH PEMBATALAN DI MULAI!!!`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()

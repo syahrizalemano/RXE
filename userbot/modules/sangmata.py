@@ -40,9 +40,7 @@ async def lastname(steal):
             if response.text.startswith("No records") or r.text.startswith(
                 "No records"
             ):
-                await steal.edit(
-                    "```TIDAK ADA DATA```"
-                )
+                await steal.edit("```TIDAK ADA DATA```")
                 await steal.client.delete_messages(
                     conv.chat_id, [msg.id, r.id, response.id]
                 )

@@ -220,13 +220,13 @@ async def pipcheck(pip):
         await pip.edit("Gunakan `.help pip` Untuk Melihat Contoh")
 
 
-@register(outgoing=True, pattern=r"^\.(?:rxelive)\s?(.)?")
+@register(outgoing=True, pattern=r"^\.(?:rxealive)\s?(.)?")
 async def amireallyalive(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
     output = (
         f"𝑹𝑿𝑬\n\n"
-        f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
+        f"\n__**{RXE_TEKS_KUSTOM}**__\n\n\n"
         f"┏━━━━°⌜ 𝑹𝑿𝑬 ⌟°━━━━┓\n"
         f"**𝑹𝑿𝑬 𝑼𝑺𝑬𝑹** : `{DEFAULTUSER}` \n"
         f"**𝑼𝑺𝑬𝑹𝑵𝑨𝑴𝑬** : @{user.username} \n"
@@ -263,8 +263,8 @@ async def amireallyalive(alive):
     output = (
         f"━─━────༺༻────━─━ \n"
         f"𝑶𝑾𝑵𝑬𝑹:⊸𝑬𝒁𝒁𝑹𝑨(t.me/ezzraez)             ㅤ \n"
-        f"𝑴𝑨𝑵𝑨𝑮𝑬 𝑩𝒀:⊸RAHKIII(t.me/rahkissyou) "
-        f"𝑹𝑿𝑬 :`v.{BOT_VER}                ㅤㅤㅤ \n"
+        f"𝑴𝑨𝑵𝑨𝑮𝑬 𝑩𝒀:⊸RAHKIII(t.me/rahkissyou)\n"
+        f"𝑹𝑿𝑬 :`v.{BOT_VER}                ㅤㅤㅤ \n\n"
         f"𝑹𝑿𝑬 𝑴𝑶𝑫𝑼𝑳𝑬 :{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
         f"━─━────༺༻────━─━"
     )

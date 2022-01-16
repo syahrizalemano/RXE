@@ -625,7 +625,8 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("RXE UPDATE", data="pembaruan")],
-                        [custom.Button.inline("RXE SETTINGS", data="settings")],
+                        [custom.Button.inline(
+                            "RXE SETTINGS", data="settings")],
                     ],
                 )
             else:
@@ -888,31 +889,31 @@ with bot:
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
-            builder = event.builder
-            result = None
-            query = event.text
+            builder=event.builder
+            result=None
+            query=event.text
             if event.query.user_id == uid and query.startswith(""):
-                buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.photo(
-                    file=roselogo,
-                    link_preview=False,
-                    text=f"RXE\n\n❥ **RXE USER :** {DEFAULTUSER}\n❥ **RXE VER :** 5.0\n❥ ".format(
+                buttons=paginate_help(0, dugmeler, "helpme")
+                result=builder.photo(
+                    file = roselogo,
+                    link_preview = False,
+                    text = f"RXE\n\n❥ **RXE USER :** {DEFAULTUSER}\n❥ **RXE VER :** 5.0\n❥ ".format(
                         len(dugmeler),
                     ),
-                    buttons=buttons,
+                    buttons = buttons,
                 )
             elif query.startswith("tb_btn"):
-                result = builder.article(
+                result=builder.article(
                     "**𝑹𝑿𝑬**",
-                    text="Daftar Plugins",
-                    buttons=[],
-                    link_preview=True,
+                    text = "Daftar Plugins",
+                    buttons = [],
+                    link_preview = True,
                 )
             else:
-                result = builder.article(
+                result=builder.article(
                     " **𝑹𝑿𝑬**",
-                    text="""𝑹𝑿𝑬 HANDLER""",
-                    buttons=[
+                    text = """𝑹𝑿𝑬 HANDLER""",
+                    buttons = [
                         [
                             custom.Button.url(
                                 "EZZRA​",
@@ -922,7 +923,7 @@ with bot:
                                 "https://t.me/rahkissyou"),
                         ],
                     ],
-                    link_preview=False,
+                    link_preview = False,
                 )
             await event.answer([result] if result else None)
 
@@ -933,14 +934,14 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
+                current_page_number=int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
+                buttons=paginate_help(
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
-                await event.edit(buttons=buttons)
+                await event.edit(buttons = buttons)
             else:
-                reply_pop_up_alert = (
+                reply_pop_up_alert=(
                     f"DONT TOUCH, PERINTAH DIBATALKAN. IZIN PENGGUNA {DEFAULTUSER}."
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)

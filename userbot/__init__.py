@@ -881,7 +881,7 @@ with bot:
                     file=roselogo,
                     link_preview=True,
                     buttons=[
-                        [Button.url]("EZZRA", "t.me/ezzraez")
+                        [Button.url]("EZZRA", "t.me/ezzraez")],
                         [Button.url("RAKHIII", "t.me/rahkissyou")],
                     ],
                 )

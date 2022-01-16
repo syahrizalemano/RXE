@@ -883,8 +883,8 @@ with bot:
                     link_preview=True,
                     buttons=[
                         Button.url("EZZRA", "t.me/ezzraez")]
-                        [Button.url("RAKHIII", "t.me/rahkissyou")]
-                    ],
+                        [Button.url("RAKHIII", "t.me/rahkissyou")
+                    ]
                 )
 
         @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602

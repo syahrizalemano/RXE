@@ -3,7 +3,7 @@
 
 from telethon.events import ChatAction
 
-from userbot import DEVS, bot, ALIVE_NAME
+from userbot import DEVS, bot
 from userbot.events import man_cmd, register
 from userbot.utils import get_user_from_event
 

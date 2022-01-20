@@ -22,5 +22,6 @@
 *   [Sendi](https://github.com/SendiAp/Rose-Userbot)   Rose-Userbot
 *   [Risman](https://github.com/mrismanaziz/Man-Userbot)   Man - Userbot
 *   [Skyzu](https://github.com/Skyzu/skyzu-userbot)   skyzu-userbot
+*   [ManusiaRakitan](https://https://github.com/ManusiaRakitan/Kampang-Bot)  Kampang-Bot  
 *   DAN TERIMAKASIH KEPADA USERBOT LAINNYA
 

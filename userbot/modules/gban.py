@@ -1,15 +1,17 @@
-# BY ManusiaRakitan
+# Fixed By Koala @manusiarakitann
+# jangan datang hanya saat perlu :) aku bukan tuhan
+# Lord-Userbot
+# Lu kontollll..
 
-from telethon.events import ChatAction
+from userbot import ALIVE_NAME, CMD_HELP, bot
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from telethon.tl.types import MessageEntityMentionName
-
-from userbot import ALIVE_NAME, CMD_HELP, DEVS, bot
 from userbot.events import register
+from telethon.tl.types import MessageEntityMentionName
+from telethon.events import ChatAction
 
 
 async def get_full_user(event):
-    args = event.pattern_match.group(1).split(":", 1)
+    args = event.pattern_match.group(1).split(':', 1)
     extra = None
     if event.reply_to_msg_id and not len(args) == 2:
         previous_message = await event.get_reply_message()
@@ -26,16 +28,15 @@ async def get_full_user(event):
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
-            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
+            if isinstance(probable_user_mention_entity,
+                          MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit(
-                "`Terjadi Kesalahan... Mohon Lapor Ke Grup` @ezzraez", str(err)
-            )
+            return await event.edit("`ERROR, LAPOR KE @ezzraez", str(err))
     return user_obj, extra
 
 
@@ -48,6 +49,8 @@ async def get_user_from_id(user, event):
         await event.edit(str(err))
         return None
     return user_obj
+
+# port by: alvin Lord-Userbot
 
 
 @bot.on(ChatAction)
@@ -79,15 +82,14 @@ async def handler(tele):
 
 
 @register(outgoing=True, pattern="^.gban(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`Perintah Global Banned!`")
+        dark = await dc.reply("`Perintah Global Banned!!`")
     else:
-        dark = await dc.edit("`Jangan tolol, di gban kan!!`")
+        dark = await dc.edit("`Jangan tolol, di gban kan!`")
     me = await userbot.client.get_me()
     await dark.edit(f"`proses gban anak kontol!!!`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
@@ -107,11 +109,11 @@ async def gben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit(f"`Terjadi Kesalahan`")
+        return await dark.edit(f"`error guys, ulangi sampai bisa. Kalo gbisa lapor ke ezzra`")
     if user:
-        if user.id in DEVS:
+        if user.id == 1837386113:
             return await dark.edit(
-                f"`Anda Tidak Bisa Melakukan Global Banned, Karena dia pembuatku 🤪`"
+                f"`ETTS TIDAK KENAA`"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -142,11 +144,11 @@ async def gben(userbot):
         pass
     return await dark.edit(
         f"**╔═════ஓ๑♡๑ஓ═════╗\n** `𝙂𝘽𝙖𝙣𝙣𝙚𝙙`\n**𝙂𝘽𝙖𝙣 𝐁𝐲: ** `{ALIVE_NAME}`\n**Username: ** [{user.first_name}](tg: // user?id={user.id})\n**DIHUKUM: ** `𝗚𝗹𝗼𝗯𝗮𝗹 𝗕𝗮𝗻𝗻𝗲𝗱`\n╚═════ஓ๑♡๑ஓ═════╝"
+
     )
 
 
-@register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
+@ register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
 async def gunben(userbot):
     dc = userbot
     sender = await dc.get_sender()
@@ -174,12 +176,10 @@ async def gunben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit("`Terjadi Kesalahan`")
+        return await dark.edit("`ERROR GUYS, ULANGI SAMPAI BISA. KALO GABISA LAPOR EZZRA`")
     if user:
-        if user.id in DEVS:
-            return await dark.edit(
-                "**Pengguna Ini tidak bisa di Blacklist, Karna Dia adalah pembuatku** 🤪"
-            )
+        if user.id == 1837386113:
+            return await dark.edit("**PERINTAH DIBATALKAN, DIA ADALAH PEMBUATKU**")
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
         except BaseException:
@@ -197,29 +197,27 @@ async def gunben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await dark.edit(f"`UNGBAN AKTIF, LOADING UNSELECT `")
+                await dark.edit(f"`UNGBAN AKTIF, LOADING UNSELECT`")
             except BaseException:
                 b += 1
     else:
-        await dark.edit("`Harap Balas Ke Pesan Pengguna`")
+        await dark.edit("`Balas Ke Pesan`")
     try:
         if ungmute(user.id) is False:
-            return await dark.edit(
-                "*PENGGUNA TIDAK PERNAH DI GBAN, KONTOL BIKIN CAPE**"
-            )
+            return await dark.edit("**PENGGUNA TIDAK PERNAH DI GBAN, KONTOL BIKIN CAPE.**")
     except BaseException:
         pass
     return await dark.edit(
-        f"**↳\n** `𝗨𝗻𝗴𝗕𝗮𝗻𝗻𝗲𝗱 `\n**𝐔𝐧𝐠𝐁𝐚𝐧𝐧𝐞𝐝 𝐁𝐲: ** `{ALIVE_NAME}`\n**Username: ** [{user.first_name}](tg: // user?id={user.id})\n**UNGBAN: ** `𝙐𝙣𝙜𝘽𝙖𝙣𝙣𝙚𝙙`\n←"
+        f"****↳\n** `𝗨𝗻𝗴𝗕𝗮𝗻𝗻𝗲𝗱 `\n**𝐔𝐧𝐠𝐁𝐚𝐧𝐧𝐞𝐝 𝐁𝐲: ** `{ALIVE_NAME}`\n**Username: ** [{user.first_name}](tg: // user?id={user.id})\n**UNGBAN: ** `𝙐𝙣𝙜𝘽𝙖𝙣𝙣𝙚𝙙`\n←"
+
     )
 
 
-CMD_HELP.update(
-    {
-        "gban": "\
-**Modules:** __Global Banned__\n\n**Perintah:** `.gban`\
-\n**Penjelasan:** Melakukan Banned Secara Global Ke Semua Grup Dimana Anda Sebagai Admin\
-\n\n**Perintah:** `.ungban`\
-\n**Penjelasan:** Membatalkan Global Banned"
-    }
-)
+
+CMD_HELP.update({
+    "gban": "\
+`.gban`\
+\nUsage:  Melakukan Global Banned Untuk Jamet Tele Yang Mereshahkan.\
+\n\n`.ungban`\
+\nUsage:  Mengampuni Jamet"
+})

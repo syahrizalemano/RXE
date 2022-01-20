@@ -226,7 +226,7 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))
     output = (
         f"𝑹𝑿𝑬\n\n"
-        f"\n__**{RXE_TEKS_KUSTOM}**__\n\n\n"
+        f"\n__**{ROSE_TEKS_KUSTOM}**__\n\n\n"
         f"┏━━━━°⌜ 𝑹𝑿𝑬 ⌟°━━━━┓\n"
         f"**𝑹𝑿𝑬 𝑼𝑺𝑬𝑹** : `{DEFAULTUSER}` \n"
         f"**𝑼𝑺𝑬𝑹𝑵𝑨𝑴𝑬** : @{user.username} \n"
@@ -262,10 +262,10 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))
     output = (
         f"━─━────༺༻────━─━ \n"
-        f"𝑶𝑾𝑵𝑬𝑹:⊸𝑬𝒁𝒁𝑹𝑨(t.me/ezzraez)             ㅤ \n"
-        f"𝑴𝑨𝑵𝑨𝑮𝑬 𝑩𝒀:⊸RAHKIII(t.me/rahkissyou)\n"
-        f"𝑹𝑿𝑬 :`v.{BOT_VER}                ㅤㅤㅤ \n\n"
-        f"𝑹𝑿𝑬 𝑴𝑶𝑫𝑼𝑳𝑬 :{len(modules)} ㅤㅤㅤㅤㅤㅤㅤ   \n"
+        f"𝑶𝑾𝑵𝑬𝑹:⊸[𝑬𝒁𝒁𝑹𝑨](t.me/ezzraez)\n"
+        f"𝑴𝑨𝑵𝑨𝑮𝑬 𝑩𝒀:⊸[RAHKIII](t.me/rahkissyou)\n"
+        f"𝑹𝑿𝑬 :`v.{BOT_VER}\n"
+        f"𝑹𝑿𝑬 𝑴𝑶𝑫𝑼𝑳𝑬 :{len(modules)}\n"
         f"━─━────༺༻────━─━"
     )
     if ALIVE_LOGO:
@@ -309,8 +309,8 @@ async def redis(alive):
         f"◦ **𝑹𝑿𝑬 𝑩𝑹𝑨𝑵𝑪𝑯   :** {UPSTREAM_REPO_BRANCH} \n"
         f"◦ **𝑹𝑿𝑬 𝑽𝑬𝑹  :** {BOT_VER} \n"
         f"◦ **𝑹𝑿𝑬 𝑴𝑶𝑫𝑼𝑳𝑬  :** {len(modules)} Modules \n"
-        f"◦ **𝑶𝑾𝑵𝑬𝑹    :** 𝑬𝒁𝒁𝑹𝑨 (https://t.me/ezzraez) \n"
-        f"◦ **𝑴𝑨𝑵𝑨𝑮𝑬  :** 𝑹𝑨𝑯𝑲𝑰𝑰(https://t.me/rahkiisyou) \n"
+        f"◦ **𝑶𝑾𝑵𝑬𝑹    :** [𝑬𝒁𝒁𝑹𝑨] (https://t.me/ezzraez)\n"
+        f"◦ **𝑴𝑨𝑵𝑨𝑮𝑬  :** [𝑹𝑨𝑯𝑲𝑰𝑰](https://t.me/rahkiisyou)\n"
         f"»»———-　　———-««"
     )
     if ALIVE_LOGO:

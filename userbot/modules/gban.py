@@ -1,3 +1,4 @@
+from telethon.events import ChatAction
 from userbot import ALIVE_NAME, CMD_HELP, DEVS, bot
 from userbot.events import register
 

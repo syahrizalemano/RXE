@@ -1,4 +1,4 @@
-#BY ManusiaRakitan
+# BY ManusiaRakitan
 
 from telethon.events import ChatAction
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest

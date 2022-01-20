@@ -302,16 +302,14 @@ async def redis(alive):
     await alive.edit("RXE")
     await asyncio.sleep(2)
     output = (
-        f"»»———-　　———-««\n"
         f"◦ **𝑹𝑿𝑬     :** {DEFAULTUSER} \n"
         f"◦ **𝑹𝑿𝑬 𝑼𝑺𝑬𝑹 :** @{user.username} \n"
         f"◦ **𝑷𝒀𝑻𝑯𝑶𝑵   :** Ver {python_version()} \n"
         f"◦ **𝑹𝑿𝑬 𝑩𝑹𝑨𝑵𝑪𝑯   :** {UPSTREAM_REPO_BRANCH} \n"
         f"◦ **𝑹𝑿𝑬 𝑽𝑬𝑹  :** {BOT_VER} \n"
         f"◦ **𝑹𝑿𝑬 𝑴𝑶𝑫𝑼𝑳𝑬  :** {len(modules)} Modules \n"
-        f"◦ **𝑶𝑾𝑵𝑬𝑹    :** [𝑬𝒁𝒁𝑹𝑨] (https://t.me/ezzraez)\n"
-        f"◦ **𝑴𝑨𝑵𝑨𝑮𝑬  :** [𝑹𝑨𝑯𝑲𝑰𝑰](https://t.me/rahkiisyou)\n"
-        f"»»———-　　———-««"
+        f"◦ **𝑶𝑾𝑵𝑬𝑹    :[𝑬𝒁𝒁𝑹𝑨](https://t.me/ezzraez)\n"
+        f"◦ **𝑴𝑨𝑵𝑨𝑮𝑬  :[𝑹𝑨𝑯𝑲𝑰𝑰](https://t.me/rahkiisyou)\n"
     )
     if ALIVE_LOGO:
         try:

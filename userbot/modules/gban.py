@@ -3,15 +3,16 @@
 # Lord-Userbot
 # Lu kontollll..
 
-from userbot import ALIVE_NAME, CMD_HELP, bot
-from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from userbot.events import register
-from telethon.tl.types import MessageEntityMentionName
 from telethon.events import ChatAction
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.types import MessageEntityMentionName
+
+from userbot import ALIVE_NAME, CMD_HELP, bot
+from userbot.events import register
 
 
 async def get_full_user(event):
-    args = event.pattern_match.group(1).split(':', 1)
+    args = event.pattern_match.group(1).split(":", 1)
     extra = None
     if event.reply_to_msg_id and not len(args) == 2:
         previous_message = await event.get_reply_message()
@@ -28,8 +29,7 @@ async def get_full_user(event):
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
-            if isinstance(probable_user_mention_entity,
-                          MessageEntityMentionName):
+            if isinstance(probable_user_mention_entity, MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
@@ -49,6 +49,7 @@ async def get_user_from_id(user, event):
         await event.edit(str(err))
         return None
     return user_obj
+
 
 # port by: alvin Lord-Userbot
 
@@ -109,12 +110,12 @@ async def gben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit(f"`error guys, ulangi sampai bisa. Kalo gbisa lapor ke ezzra`")
+        return await dark.edit(
+            f"`error guys, ulangi sampai bisa. Kalo gbisa lapor ke ezzra`"
+        )
     if user:
         if user.id == 1837386113:
-            return await dark.edit(
-                f"`ETTS TIDAK KENAA`"
-            )
+            return await dark.edit(f"`ETTS TIDAK KENAA`")
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
         except BaseException:
@@ -144,11 +145,10 @@ async def gben(userbot):
         pass
     return await dark.edit(
         f"**╔═════ஓ๑♡๑ஓ═════╗\n** `𝙂𝘽𝙖𝙣𝙣𝙚𝙙`\n**𝙂𝘽𝙖𝙣 𝐁𝐲: ** `{ALIVE_NAME}`\n**Username: ** [{user.first_name}](tg: // user?id={user.id})\n**DIHUKUM: ** `𝗚𝗹𝗼𝗯𝗮𝗹 𝗕𝗮𝗻𝗻𝗲𝗱`\n╚═════ஓ๑♡๑ஓ═════╝"
-
     )
 
 
-@ register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
+@register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
 async def gunben(userbot):
     dc = userbot
     sender = await dc.get_sender()
@@ -176,7 +176,9 @@ async def gunben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit("`ERROR GUYS, ULANGI SAMPAI BISA. KALO GABISA LAPOR EZZRA`")
+        return await dark.edit(
+            "`ERROR GUYS, ULANGI SAMPAI BISA. KALO GABISA LAPOR EZZRA`"
+        )
     if user:
         if user.id == 1837386113:
             return await dark.edit("**PERINTAH DIBATALKAN, DIA ADALAH PEMBUATKU**")
@@ -204,20 +206,22 @@ async def gunben(userbot):
         await dark.edit("`Balas Ke Pesan`")
     try:
         if ungmute(user.id) is False:
-            return await dark.edit("**PENGGUNA TIDAK PERNAH DI GBAN, KONTOL BIKIN CAPE.**")
+            return await dark.edit(
+                "**PENGGUNA TIDAK PERNAH DI GBAN, KONTOL BIKIN CAPE.**"
+            )
     except BaseException:
         pass
     return await dark.edit(
         f"****↳\n** `𝗨𝗻𝗴𝗕𝗮𝗻𝗻𝗲𝗱 `\n**𝐔𝐧𝐠𝐁𝐚𝐧𝐧𝐞𝐝 𝐁𝐲: ** `{ALIVE_NAME}`\n**Username: ** [{user.first_name}](tg: // user?id={user.id})\n**UNGBAN: ** `𝙐𝙣𝙜𝘽𝙖𝙣𝙣𝙚𝙙`\n←"
-
     )
 
 
-
-CMD_HELP.update({
-    "gban": "\
+CMD_HELP.update(
+    {
+        "gban": "\
 `.gban`\
 \nUsage:  Melakukan Global Banned Untuk Jamet Tele Yang Mereshahkan.\
 \n\n`.ungban`\
 \nUsage:  Mengampuni Jamet"
-})
+    }
+)

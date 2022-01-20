@@ -2,10 +2,8 @@
 # Lord Userbot
 
 from telethon.events import ChatAction
-from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from telethon.tl.types import MessageEntityMentionName
 
-from userbot import ALIVE_NAME, CMD_HELP, DEVS, bot
+from userbot import ALIVE_NAME, DEVS, bot
 from userbot.events import register
 
 # Ported For Lord-Userbot by liualvinas/Alvin

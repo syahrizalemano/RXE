@@ -2,10 +2,11 @@
 # Lord Userbot
 
 from telethon.events import ChatAction
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.types import MessageEntityMentionName
 
-from userbot import DEVS, bot
-from userbot.events import man_cmd, register
-from userbot.utils import get_user_from_event
+from userbot import ALIVE_NAME, CMD_HELP, DEVS, bot
+from userbot.events import register
 
 # Ported For Lord-Userbot by liualvinas/Alvin
 
@@ -169,5 +170,5 @@ async def gunben(userbot):
         r"\\**#UnGbanned_User**//"
         f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
         f"**User ID:** `{user.id}`\n"
-        f"**Action:** `UnGBanned by {owner}`"
+        f"**Action:** `UnGBanned by {ALIVE_NAME}`"
     )

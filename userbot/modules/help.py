@@ -29,19 +29,20 @@ async def help(event):
             await event.edit("`Command` **ERROR*")
             await asyncio.sleep(200)
     else:
-        await event.edit(f"**◇─◇──◇─────◇──◇─◇**\
+        await event.edit(
+            f"**◇─◇──◇─────◇──◇─◇**\
             \n│  HELP\
             \n◇─◇──◇─────◇──◇─◇ \
             \n   PANDUAN COMMAND\
             \n  .help <nama module>\
             \n   Modules: {len(modules)}\
-           \n»»————-    RXE　　————-««")
+           \n»»————-    RXE　　————-««"
+        )
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
             string += "`\t༺❀༻_༺❀༻ "
-        await event.reply(f"•{string}•"
-                          "\n____________________")
+        await event.reply(f"•{string}•" "\n____________________")
         await event.reply(f"\n**Ketik Contoh** `.help afk` **Untuk Informasi Module**")
         await asyncio.sleep(1000)
         await event.delete()

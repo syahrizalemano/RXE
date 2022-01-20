@@ -68,7 +68,7 @@ async def handler(tele):
                                 tele.chat_id, guser.id, view_messages=False
                             )
                             await tele.reply(
-                               f"**⊱ ──────ஓ๑∗๑ஓ ────── ⊰\n** `𝐆𝐛𝐚𝐧𝐧𝐞𝐝 `\n** 𝐆𝐁𝐚𝐧𝐧𝐞𝐝: ** `{ALIVE_NAME}`\n** 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞: **[{guser.id}](tg://user?id={guser.id})\n*𝐀𝐜𝐭𝐢𝐨𝐧: ** `𝗚𝗹𝗼𝗯𝗮𝗹 𝗕𝗮𝗻𝗻𝗲𝗱`\n⊱ ──────ஓ๑∗๑ஓ ────── ⊰"
+                                f"**⊱ ──────ஓ๑∗๑ஓ ────── ⊰\n** `𝐆𝐛𝐚𝐧𝐧𝐞𝐝 `\n** 𝐆𝐁𝐚𝐧𝐧𝐞𝐝: ** `{ALIVE_NAME}`\n** 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞: **[{guser.id}](tg://user?id={guser.id})\n*𝐀𝐜𝐭𝐢𝐨𝐧: ** `𝗚𝗹𝗼𝗯𝗮𝗹 𝗕𝗮𝗻𝗻𝗲𝗱`\n⊱ ──────ஓ๑∗๑ஓ ────── ⊰"
                             )
                         except BaseException:
                             return
@@ -133,14 +133,11 @@ async def gben(userbot):
         await dark.edit(f"`Mohon Balas Ke Pesan`")
     try:
         if gmute(user.id) is False:
-            return await dark.edit(
-                f"**Error..! Pengguna sudah pernah di gban.**"
-            )
+            return await dark.edit(f"**Error..! Pengguna sudah pernah di gban.**")
     except BaseException:
         pass
     return await dark.edit(
         f"**╔═════ஓ๑♡๑ஓ═════╗\n** `𝙂𝘽𝙖𝙣𝙣𝙚𝙙`\n**𝙂𝘽𝙖𝙣 𝐁𝐲: ** `{ALIVE_NAME}`\n**Username: ** [{user.first_name}](tg: // user?id={user.id})\n**DIHUKUM: ** `𝗚𝗹𝗼𝗯𝗮𝗹 𝗕𝗮𝗻𝗻𝗲𝗱`\n╚═════ஓ๑♡๑ஓ═════╝"
-
     )
 
 
@@ -155,9 +152,7 @@ async def gunben(userbot):
     else:
         dark = await dc.edit("`PROSES UNGBAN ANAK BAIK`")
     me = await userbot.client.get_me()
-    await dark.edit(
-        f"`UNGBAN START..!!!`"
-    )
+    await dark.edit(f"`UNGBAN START..!!!`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -211,8 +206,7 @@ async def gunben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-       f"**↳\n** `𝗨𝗻𝗴𝗕𝗮𝗻𝗻𝗲𝗱 `\n**𝐔𝐧𝐠𝐁𝐚𝐧𝐧𝐞𝐝 𝐁𝐲: ** `{ALIVE_NAME}`\n**Username: ** [{user.first_name}](tg: // user?id={user.id})\n**UNGBAN: ** `𝙐𝙣𝙜𝘽𝙖𝙣𝙣𝙚𝙙`\n←"
-
+        f"**↳\n** `𝗨𝗻𝗴𝗕𝗮𝗻𝗻𝗲𝗱 `\n**𝐔𝐧𝐠𝐁𝐚𝐧𝐧𝐞𝐝 𝐁𝐲: ** `{ALIVE_NAME}`\n**Username: ** [{user.first_name}](tg: // user?id={user.id})\n**UNGBAN: ** `𝙐𝙣𝙜𝘽𝙖𝙣𝙣𝙚𝙙`\n←"
     )
 
 

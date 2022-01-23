@@ -4,7 +4,7 @@ from userbot.events import register
 from fridaybot import CMD_HELP
 
 
-@register(outgoing=True, pattern=".join$"))
+@register(outgoing=True, pattern="^.join(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -23,7 +23,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=".climb$"))
+@register(outgoing=True, pattern="^.climb(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -42,7 +42,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=".aag$"))
+@register(outgoing=True, pattern="^.aag(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -61,7 +61,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=".push$"))
+@register(outgoing=True, pattern="^.push(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -80,7 +80,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=".work$"))
+@register(outgoing=True, pattern="^.works(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -100,7 +100,7 @@ async def _(event):
 
 
 # by  @Halto_Tha
-@register(outgoing=True, pattern=r".lmoon$"))
+@register(outgoing=True, pattern=r"^.lmoon(?: |$)(.*)")
 async def test(event):
     if event.fwd_from:
         return
@@ -110,7 +110,7 @@ async def test(event):
     )
 
 
-@register(outgoing=True, pattern=r".city$"))
+@register(outgoing=True, pattern=r"^.city(?: |$)(.*)")
     if event.fwd_from:
         return
     await edit_or_reply(

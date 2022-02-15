@@ -58,14 +58,26 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=1979717764, pattern=r"^.ezzra$")
-async def _(RXE):
-    await RXE.reply(random.choice(ezzra))
+@register(outgoing=True, pattern="^.ezzra(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("HALLO, MY NAME"
+    "███████████████████████████████\n"
+    "█▄─▄▄─█░▄▄░▄█░▄▄░▄█▄─▄▄▀██▀▄─██\n"
+    "██─▄█▀██▀▄█▀██▀▄█▀██─▄─▄██─▀─██\n"
+    "▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▀▄▄▀\n")
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^.rahkii$")
-async def _(RXE):
-    await RXE.reply(random.choice(rahkii))
+@register(outgoing=True, pattern="^.rahkii(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit(""ngeng, im"
+    "╔═══╦═══╦╗─╔╦╗╔═╦══╦══╗\n"
+    "║╔═╗║╔═╗║║─║║║║╔╩╣╠╩╣╠╝\n"
+    "║╚═╝║║─║║╚═╝║╚╝╝─║║─║║\n"
+    "║╔╗╔╣╚═╝║╔═╗║╔╗║─║║─║║\n"
+    "║║║╚╣╔═╗║║─║║║║╚╦╣╠╦╣╠╗\n"
+    "╚╝╚═╩╝─╚╩╝─╚╩╝╚═╩══╩══╝\n")
 
 
 @register(outgoing=True, pattern="^.rping$")

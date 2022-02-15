@@ -71,7 +71,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.rahkii(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit(""ngeng, im"
+    await typew.edit("ngeng, im"
     "╔═══╦═══╦╗─╔╦╗╔═╦══╦══╗\n"
     "║╔═╗║╔═╗║║─║║║║╔╩╣╠╩╣╠╝\n"
     "║╚═╝║║─║║╚═╝║╚╝╝─║║─║║\n"

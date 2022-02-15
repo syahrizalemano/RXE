@@ -5,13 +5,12 @@
 """ Userbot module containing commands related to the \
     Information Superhighway (yes, Internet). """
 
-import random
 import time
 from datetime import datetime
 
 import redis
 
-from userbot import ALIVE_NAME, CMD_HELP, DEVS, StartTime
+from userbot import ALIVE_NAME, CMD_HELP, StartTime
 from userbot.events import register
 
 ezzra = [
@@ -61,23 +60,27 @@ async def get_readable_time(seconds: int) -> str:
 @register(outgoing=True, pattern="^.ezzra(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("HALLO, MY NAME"
-    "███████████████████████████████\n"
-    "█▄─▄▄─█░▄▄░▄█░▄▄░▄█▄─▄▄▀██▀▄─██\n"
-    "██─▄█▀██▀▄█▀██▀▄█▀██─▄─▄██─▀─██\n"
-    "▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▀▄▄▀\n")
+    await typew.edit(
+        "HALLO, MY NAME"
+        "███████████████████████████████\n"
+        "█▄─▄▄─█░▄▄░▄█░▄▄░▄█▄─▄▄▀██▀▄─██\n"
+        "██─▄█▀██▀▄█▀██▀▄█▀██─▄─▄██─▀─██\n"
+        "▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▀▄▄▀\n"
+    )
 
 
 @register(outgoing=True, pattern="^.rahkii(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("ngeng, im"
-    "╔═══╦═══╦╗─╔╦╗╔═╦══╦══╗\n"
-    "║╔═╗║╔═╗║║─║║║║╔╩╣╠╩╣╠╝\n"
-    "║╚═╝║║─║║╚═╝║╚╝╝─║║─║║\n"
-    "║╔╗╔╣╚═╝║╔═╗║╔╗║─║║─║║\n"
-    "║║║╚╣╔═╗║║─║║║║╚╦╣╠╦╣╠╗\n"
-    "╚╝╚═╩╝─╚╩╝─╚╩╝╚═╩══╩══╝\n")
+    await typew.edit(
+        "ngeng, im"
+        "╔═══╦═══╦╗─╔╦╗╔═╦══╦══╗\n"
+        "║╔═╗║╔═╗║║─║║║║╔╩╣╠╩╣╠╝\n"
+        "║╚═╝║║─║║╚═╝║╚╝╝─║║─║║\n"
+        "║╔╗╔╣╚═╝║╔═╗║╔╗║─║║─║║\n"
+        "║║║╚╣╔═╗║║─║║║║╚╦╣╠╦╣╠╗\n"
+        "╚╝╚═╩╝─╚╩╝─╚╩╝╚═╩══╩══╝\n"
+    )
 
 
 @register(outgoing=True, pattern="^.rping$")

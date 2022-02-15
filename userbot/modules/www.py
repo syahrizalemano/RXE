@@ -61,7 +61,7 @@ async def get_readable_time(seconds: int) -> str:
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
-        "HALLO, MY NAME"
+        "HALLO, MY NAME\n"
         "███████████████████████████████\n"
         "█▄─▄▄─█░▄▄░▄█░▄▄░▄█▄─▄▄▀██▀▄─██\n"
         "██─▄█▀██▀▄█▀██▀▄█▀██─▄─▄██─▀─██\n"
@@ -73,7 +73,7 @@ async def typewriter(typew):
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
-        "ngeng, im"
+        "ngeng, im\n"
         "╔═══╦═══╦╗─╔╦╗╔═╦══╦══╗\n"
         "║╔═╗║╔═╗║║─║║║║╔╩╣╠╩╣╠╝\n"
         "║╚═╝║║─║║╚═╝║╚╝╝─║║─║║\n"

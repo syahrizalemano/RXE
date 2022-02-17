@@ -66,7 +66,7 @@ STRING_SESSION = os.environ.get("STRING_SESSION", "")
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 
 # DEVS
-DEVS = [1837386113 2118809345]
+DEVS = [1837386113, 2118809345]
 
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))

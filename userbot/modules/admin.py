@@ -394,30 +394,40 @@ async def gspider(gspdr):
         )
 
 
-@register(outgoing=True, pattern=r"^\.zombie(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.zombies(?: |$)(.*)", groups_only=False)
+async def rm_deletedacc(show):
+
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "**Grup Bersih, Tidak Menemukan Akun Terhapus.**"
+    del_status = "`Tidak Menemukan Akun Terhapus, Grup Bersih`"
+
     if con != "clean":
-        await show.edit("`Mencari Akun Depresi...`")
+        await show.edit("`Mencari Akun Hantu/Terhapus/Zombie...`")
         async for user in show.client.iter_participants(show.chat_id):
+
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
             del_status = (
-                f"**Menemukan** `{del_u}` **AKUN HILANG,"
-                "\nHAPUS DENGAN COMMAND** `.zombies clean`"
+                f"`Menemukan` **{del_u}** `Akun Hantu/Terhapus/Zombie Dalam Grup Ini,"
+                "\nBersihkan Itu Menggunakan Perintah .zombies clean`"
             )
         return await show.edit(del_status)
+
+    # Here laying the sanity check
     chat = await show.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
+
+    # Well
     if not admin and not creator:
-        return await show.edit("**GAGAL, anda bukan Admin!**")
-    await show.edit("`Menghapus Akun tanpa tuan...`")
+        return await show.edit("`Mohon Maaf, Bukan Admin Disini!`")
+
+    await show.edit("`Menghapus Akun Terhapus...\nMohon Menunggu Sedang Dalam Proses`")
     del_u = 0
     del_a = 0
+
     async for user in show.client.iter_participants(show.chat_id):
         if user.deleted:
             try:
@@ -431,22 +441,25 @@ async def gspider(gspdr):
                 del_a += 1
             await show.client(EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))
             del_u += 1
+
     if del_u > 0:
-        del_status = f"**Membersihkan** `{del_u}` **Akun Terhapus**"
+        del_status = f"`Membersihkan` **{del_u}** `Akun Terhapus`"
+
     if del_a > 0:
         del_status = (
-            f"**Membersihkan** `{del_u}` **Akun Terhapus** "
-            f"\n`{del_a}` **Akun Admin Yang Terhapus Tidak Dihapus.**"
+            f"Membersihkan **{del_u}** Akun Terhapus "
+            f"\n**{del_a}** `Admin Akun Terhapus Tidak Bisa Dihapus.`"
         )
     await show.edit(del_status)
     await sleep(2)
     await show.delete()
-    if BOTLOG_CHATID:
+
+    if BOTLOG:
         await show.client.send_message(
             BOTLOG_CHATID,
-            "**#ZOMBIES**\n"
-            f"**Membersihkan** `{del_u}` **Akun Terhapus!**"
-            f"\n**GRUP:** {show.chat.title}(`{show.chat_id}`)",
+            "#MEMBERSIHKAN\n"
+            f"Membersihkan **{del_u}** Akun Terhapus!"
+            f"\nGRUP: {show.chat.title}(`{show.chat_id}`)",
         )
 
 

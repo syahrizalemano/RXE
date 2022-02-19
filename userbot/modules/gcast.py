@@ -39,7 +39,7 @@ async def gcast(event):
     else:
         await event.edit("**MANA YANG MAAU DI GCAST?**")
         return
-    kk = await event.edit("`Globally Broadcasting Msg...`")
+    kk = await event.edit("`Nanti kalo limit jgn salain sy ...`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -54,7 +54,7 @@ async def gcast(event):
             except BaseException:
                 er += 1
     await kk.edit(
-        f"**RXE Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**"
+        f"**Done** `{done}` **Grup, Fail** `{er}` **Grup**"
     )
 
 

@@ -53,9 +53,7 @@ async def gcast(event):
                     pass
             except BaseException:
                 er += 1
-    await kk.edit(
-        f"**Done** `{done}` **Grup, Fail** `{er}` **Grup**"
-    )
+    await kk.edit(f"**Done** `{done}` **Grup, Fail** `{er}` **Grup**")
 
 
 @register(outgoing=True, pattern=r"^\.gucast(?: |$)(.*)")

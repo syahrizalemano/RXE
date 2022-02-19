@@ -115,7 +115,7 @@ async def gben(userbot):
             f"`error guys, ulangi sampai bisa. Kalo gbisa lapor ke ezzra`"
         )
     if user:
-        if user.id == 1837386113, 2118809345:
+        if user.id in DEVS:
             return await dark.edit(f"`ETTS TIDAK KENAA`")
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -182,7 +182,7 @@ async def gunben(userbot):
             "`ERROR GUYS, ULANGI SAMPAI BISA. KALO GABISA LAPOR EZZRA`"
         )
     if user:
-        if user.id == 1837386113, 2118809345:
+        if user.id in DEVS:
             return await dark.edit("**PERINTAH DIBATALKAN, DIA ADALAH PEMBUATKU**")
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute

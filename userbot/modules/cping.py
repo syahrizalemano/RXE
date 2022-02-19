@@ -7,10 +7,10 @@ from userbot import DEVS
 from userbot.events import register
 
 cping = [
-    "**Hadir bang** `𓆩79.08𓆪` ",
-    "**Hadir kak** `𓆩99.65𓆪` ",
-    "**Hadir om** `𓆩76.89𓆪` ",
-    "**Hadir sky** `𓆩72.69𓆪` ",
+    "**hader kah** `𓆩79.08𓆪` ",
+    "**ya hader kok** `𓆩99.65𓆪` ",
+    "**yang itu haderrrr g** `𓆩76.89𓆪` ",
+    "**Haderr hader!!!!** `𓆩72.69𓆪` ",
 ]
 
 
@@ -40,5 +40,5 @@ async def get_readable_time(seconds: int) -> str:
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
-async def _(skyzu):
+async def redis(pong):
     await rendy.reply(random.choice(cping))

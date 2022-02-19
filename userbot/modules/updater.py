@@ -105,7 +105,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#NOTE \n" "OK KAMPANG Berhasil Di Update"
+                BOTLOG_CHATID, "#NOTE \n" "OK Berhasil Di Update"
             )
 
     else:
@@ -131,7 +131,7 @@ async def update(event, repo, ups_rem, ac_br):
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#NOTICE \n" "OK BOT KAMPANG Berhasil Di Update"
+            BOTLOG_CHATID, "#NOTICE \n" "OK BOT Berhasil Di Update"
         )
         await asyncio.sleep(10)
         await event.delete()

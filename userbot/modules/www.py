@@ -62,7 +62,7 @@ async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
         "HALLO, MY NAME\n"
-            "┏━━━┳━━━━┓\"
+            "┏━━━┳━━━━┓\n"
             "┃┏━━┻━━┓━┃\n"
             "┃┗━━┓╋┏┛┏┛\n"
             "┃┏━━┛┏┛┏┛\n"

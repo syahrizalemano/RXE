@@ -75,6 +75,7 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
+
 @register(outgoing=True, pattern=r"^\.setgpic(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.csetgpic(?: |$)(.*)")
 async def set_group_photo(event):
@@ -480,6 +481,7 @@ async def get_admin(show):
     except ChatAdminRequiredError as err:
         mentions += " " + str(err) + "\n"
     await show.edit(mentions, parse_mode="html")
+
 
 @register(outgoing=True, pattern=r"^\.admins$")
 async def get_admin(show):

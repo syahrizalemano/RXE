@@ -41,7 +41,7 @@ async def help(event):
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += f"`\t\t\t༺t❀༻\t\t\t"
+            string += f"`\t\t\t\t\t\t"
         await event.reply(f"•{string}•" "\n____________________")
         await event.reply(
             f"**[RXE-Userbot](https://github.com/syahrizalemano/RXE):**\n"

@@ -322,7 +322,7 @@ if STRING_SESSION:
 else:
     # pylint: disable=invalid-name
     bot = TelegramClient("userbot", API_KEY, API_HASH
-    )
+                         )
     call_py = PyTgCalls(bot)
 except Exception as e:
     print(f"STRING_SESSION - {e}")

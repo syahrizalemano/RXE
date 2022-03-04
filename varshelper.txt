@@ -16,6 +16,9 @@ LOGSPAMMER = True or False
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = True or False
 
+#cmd
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+
 # Heroku Credentials for updater. this vars are important
 HEROKU_MEMEZ = True or False
 HEROKU_APP_NAME =

@@ -209,7 +209,8 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
               or "https://telegra.ph/file/0a6834c01cfa2c5d83448.jpg")
 
-#CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+#cmd
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 # Default .helpme Logo
 INLINE_PIC = (os.environ.get("INLINE_PIC")

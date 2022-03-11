@@ -69,13 +69,11 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 DEVS = [1837386113, 2118809345]
 
 # Picture For VCPLUGIN
-PLAY_PIC = (
-    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/f1fd23dd7868e678fad51.jpg"
-)
+PLAY_PIC = (os.environ.get("PLAY_PIC")
+            or "https://telegra.ph/file/f1fd23dd7868e678fad51.jpg")
 
-QUEUE_PIC = (
-    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/1b942dddd025d3be2c5cb.jpg"
-)
+QUEUE_PIC = (os.environ.get("QUEUE_PIC")
+             or "https://telegra.ph/file/1b942dddd025d3be2c5cb.jpg")
 
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "!"
 

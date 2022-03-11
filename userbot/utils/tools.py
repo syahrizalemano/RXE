@@ -250,3 +250,28 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
         )
     await asyncio.sleep(time)
     return await newevent.delete()
+
+async def bash(cmd):
+    process = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await process.communicate()
+    err = stderr.decode().strip()
+    out = stdout.decode().strip()
+    return out, err
+
+
+def post_to_telegraph(title, html_format_content):
+    post_client = TelegraphPoster(use_api=True)
+    auth_name = "RXE"
+    auth_url = "https://github.com/syahrizalemano/RXE"
+    post_client.create_api_token(auth_name)
+    post_page = post_client.post(
+        title=title,
+        author=auth_name,
+        author_url=auth_url,
+        text=html_format_content,
+    )
+    return post_page["url"]

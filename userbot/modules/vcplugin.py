@@ -109,7 +109,7 @@ async def skip_current_song(chat_id: int):
     return [songname, link, type]
 
 
-@man_cmd(pattern="play(?:\s|$)([\s\S]*)")
+@man_cmd(pattern="play(?:\\s|$)([\\s\\S]*)")
 async def vc_play(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
@@ -211,7 +211,7 @@ async def vc_play(event):
                 await botman.edit(f"`{ep}`")
 
 
-@man_cmd(pattern="vplay(?:\s|$)([\s\S]*)")
+@man_cmd(pattern="vplay(?:\\s|$)([\\s\\S]*)")
 async def vc_vplay(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
@@ -386,7 +386,7 @@ async def vc_end(event):
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
-@man_cmd(pattern="skip(?:\s|$)([\s\S]*)")
+@man_cmd(pattern="skip(?:\\s|$)([\\s\\S]*)")
 async def vc_skip(event):
     chat_id = event.chat_id
     if len(event.text.split()) < 2:

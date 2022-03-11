@@ -19,6 +19,7 @@ from .google_images_download import googleimagesdownload
 from .progress import progress, CancelProcess
 from .tools import (
     bash,
+    edit_delete,
     humanbytes,
     time_formatter,
     human_to_bytes,

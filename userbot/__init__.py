@@ -68,6 +68,9 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 # DEVS
 DEVS = [1837386113, 2118809345]
 
+# Handler command
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "!"
+
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))

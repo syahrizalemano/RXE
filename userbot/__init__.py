@@ -69,11 +69,13 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 DEVS = [1837386113, 2118809345]
 
 # Picture For VCPLUGIN
-PLAY_PIC = (os.environ.get("PLAY_PIC")
-            or "https://telegra.ph/file/f1fd23dd7868e678fad51.jpg")
+PLAY_PIC = (
+    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/f1fd23dd7868e678fad51.jpg"
+)
 
-QUEUE_PIC = (os.environ.get("QUEUE_PIC")
-             or "https://telegra.ph/file/1b942dddd025d3be2c5cb.jpg")
+QUEUE_PIC = (
+    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/1b942dddd025d3be2c5cb.jpg"
+)
 
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "!"
 
@@ -281,6 +283,84 @@ API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 # Inline bot helper
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
 BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
+
+# 'bot' variable
+if STRING_SESSION:
+    session = StringSession(str(STRING_SESSION))
+else:
+    session = "rxeuserbot"
+try:
+    bot = TelegramClient(
+        session=session,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py = PyTgCalls(bot)
+except Exception as e:
+    print(f"STRING_SESSION - {e}")
+    sys.exit()
+
+if STRING_2:
+    session2 = StringSession(str(STRING_2))
+    RXE2 = TelegramClient(
+        session=session2,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py2 = PyTgCalls(RXE2)
+else:
+    RXE2 = None
+
+
+if STRING_3:
+    session3 = StringSession(str(STRING_3))
+    RXE3 = TelegramClient(
+        session=session3,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py3 = PyTgCalls(RXE3)
+else:
+    RXE3 = None
+
+
+if STRING_4:
+    session4 = StringSession(str(STRING_4))
+    RXE4 = TelegramClient(
+        session=session4,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py4 = PyTgCalls(RXE4)
+else:
+    RXE4 = None
+
+
+if STRING_5:
+    session5 = StringSession(str(STRING_5))
+    RXE5 = TelegramClient(
+        session=session5,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py5 = PyTgCalls(RXE5)
+else:
+    RXE5 = None
 
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)

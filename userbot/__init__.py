@@ -284,81 +284,11 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
 
 # 'bot' variable
 if STRING_SESSION:
-    session = StringSession(str(STRING_SESSION))
+    # pylint: disable=invalid-name
+    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
-    session = "rxeuserbot"
-try:
-    bot = TelegramClient(
-        session=session,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py = PyTgCalls(bot)
-except Exception as e:
-    print(f"STRING_SESSION - {e}")
-    sys.exit()
-
-if STRING_2:
-    session2 = StringSession(str(STRING_2))
-    RXE2 = TelegramClient(
-        session=session2,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py2 = PyTgCalls(RXE2)
-else:
-    RXE2 = None
-
-
-if STRING_3:
-    session3 = StringSession(str(STRING_3))
-    RXE3 = TelegramClient(
-        session=session3,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py3 = PyTgCalls(RXE3)
-else:
-    RXE3 = None
-
-
-if STRING_4:
-    session4 = StringSession(str(STRING_4))
-    RXE4 = TelegramClient(
-        session=session4,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py4 = PyTgCalls(RXE4)
-else:
-    RXE4 = None
-
-
-if STRING_5:
-    session5 = StringSession(str(STRING_5))
-    RXE5 = TelegramClient(
-        session=session5,
-        api_id=API_KEY,
-        api_hash=API_HASH,
-        connection=ConnectionTcpAbridged,
-        auto_reconnect=True,
-        connection_retries=None,
-    )
-    call_py5 = PyTgCalls(RXE5)
-else:
-    RXE5 = None
+    # pylint: disable=invalid-name
+    bot = TelegramClient("userbot", API_KEY, API_HASH)
 
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
@@ -1023,8 +953,8 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [
-                            Button.url("𝑹𝑿𝑬 𝑺𝑼𝑷𝑷𝑶𝑹𝑻", "t.me/skyzusupport"),
-                            Button.url("𝑹𝑿𝑬 𝑪𝑯𝑨𝑵𝑵𝑬𝑳", "t.me/ProjectSkyzu"),
+                            Button.url("𝑹𝑿𝑬 𝑺𝑼𝑷𝑷𝑶𝑹𝑻", "t.me/ezzrasupport"),
+                            Button.url("𝑹𝑿𝑬 𝑪𝑯𝑨𝑵𝑵𝑬𝑳", "t.me/rxechannel"),
                         ],
                         [custom.Button.inline(
                             "𝑹𝑿𝑬 𝑴𝑬𝑵𝑼", data="open_plugin")],

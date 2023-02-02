@@ -14,7 +14,7 @@ cowpy
 cryptg
 deezloader
 dnspython
-emoji
+emoji 2.2.0
 faker
 ffmpeg-python
 fontTools

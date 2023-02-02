@@ -382,7 +382,6 @@ async def unmoot(unmot):
     if unmute(unmot.chat_id, user.id) is False:
         return await unmot.edit("`Error! User probably already unmuted.`")
     else:
-
         try:
             await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
             await unmot.edit("```Unmuted Successfully```")
@@ -515,7 +514,6 @@ async def gspider(gspdr):
 
 @register(outgoing=True, pattern=r"^\.zombies(?: |$)(.*)", groups_only=False)
 async def rm_deletedacc(show):
-
     con = show.pattern_match.group(1).lower()
     del_u = 0
     del_status = "`No deleted accounts found, Group is clean`"
@@ -523,7 +521,6 @@ async def rm_deletedacc(show):
     if con != "clean":
         await show.edit("`Searching for ghost/deleted/zombie accounts...`")
         async for user in show.client.iter_participants(show.chat_id):
-
             if user.deleted:
                 del_u += 1
                 await sleep(1)

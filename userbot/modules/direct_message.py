@@ -7,7 +7,6 @@ from userbot.events import register
 
 @register(outgoing=True, pattern=r"^\.(?:dm)\s?(.*)?")
 async def remoteaccess(event):
-
     p = event.pattern_match.group(1)
     m = p.split(" ")
 
@@ -15,7 +14,6 @@ async def remoteaccess(event):
     try:
         chat_id = int(chat_id)
     except BaseException:
-
         pass
 
     msg = ""

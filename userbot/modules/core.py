@@ -24,7 +24,6 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         LOGS.info("Successfully imported " + shortname)
     else:
-
         path = Path(f"userbot/modules/{shortname}.py")
         name = "userbot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)

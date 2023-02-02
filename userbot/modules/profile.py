@@ -183,7 +183,6 @@ async def remove_profilepic(delpfp):
 
 @register(pattern=".data(?: |$)(.*)", outgoing=True)
 async def who(event):
-
     await event.edit("`Mengambil Informasi Data`")
 
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):

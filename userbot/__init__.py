@@ -835,7 +835,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if apps.get("app_uuid") == app.id:
                 apps.get("quota_used") / 60
-                AppPercentage = math.floor(apps.get("quota_used") * 100 / quota)
+                math.floor(apps.get("quota_used") * 100 / quota)
                 text = (
                     "╔═.✾. ══════════════════╗\n"
                     "**𝑹𝑿𝑬 𝑫𝒀𝑵𝑶 𝑼𝑺𝑬:**\n"

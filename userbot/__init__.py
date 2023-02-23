@@ -43,8 +43,8 @@ if CONSOLE_LOGGER_VERBOSE:
     )
 else:
     basicConfig(
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        level=INFO)
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=INFO
+    )
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 8:
@@ -69,11 +69,13 @@ BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
 DEVS = [1837386113, 2118809345]
 
 # Picture For VCPLUGIN
-PLAY_PIC = (os.environ.get("PLAY_PIC")
-            or "https://telegra.ph/file/f1fd23dd7868e678fad51.jpg")
+PLAY_PIC = (
+    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/f1fd23dd7868e678fad51.jpg"
+)
 
-QUEUE_PIC = (os.environ.get("QUEUE_PIC")
-             or "https://telegra.ph/file/1b942dddd025d3be2c5cb.jpg")
+QUEUE_PIC = (
+    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/1b942dddd025d3be2c5cb.jpg"
+)
 
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "!"
 
@@ -152,8 +154,7 @@ if REDIS_URI and REDIS_PASSWORD:
 # Chrome Driver and Headless Google Chrome Binaries
 CHROME_BIN = os.environ.get("CHROME_BIN", "/app/.apt/usr/bin/google-chrome")
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
-GOOGLE_CHROME_BIN = os.environ.get(
-    "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
+GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
 # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
 NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
@@ -215,15 +216,17 @@ ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
-ALIVE_LOGO = (os.environ.get("ALIVE_LOGO")
-              or "https://telegra.ph/file/0a6834c01cfa2c5d83448.jpg")
+ALIVE_LOGO = (
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/0a6834c01cfa2c5d83448.jpg"
+)
 
 # cmd
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 # Default .helpme Logo
-INLINE_PIC = (os.environ.get("INLINE_PIC")
-              or "https://telegra.ph/file/0a6834c01cfa2c5d83448.jpg")
+INLINE_PIC = (
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/0a6834c01cfa2c5d83448.jpg"
+)
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "₰"
@@ -253,8 +256,7 @@ G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
 G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
 G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
 G_DRIVE_FOLDER_ID = os.environ.get("G_DRIVE_FOLDER_ID", None)
-TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
-    "TMP_DOWNLOAD_DIRECTORY", "./downloads")
+TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads")
 # Google Photos
 G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
 G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
@@ -353,7 +355,8 @@ async def check_botlog_chatid():
     if entity.default_banned_rights.send_messages:
         LOGS.info(
             "Your account doesn't have rights to send messages to BOTLOG_CHATID "
-            "group. Check if you typed the Chat ID correctly.")
+            "group. Check if you typed the Chat ID correctly."
+        )
         quit(1)
 
 
@@ -371,7 +374,8 @@ with bot:
 async def check_alive():
     await bot.send_message(
         BOTLOG_CHATID,
-        "**Deployed RXE**\n─── ∙ ₰ ∙ ───\n❃ **Branch :** `RXE`\n❃ **BotVer :** `8.0.0`\n─── ∙ ₰ ∙ ───\n❃ **Support :** @ezzraez @rahkissyou\n─── ∙ ₰ ∙ ───")
+        "**Deployed RXE**\n─── ∙ ₰ ∙ ───\n❃ **Branch :** `RXE`\n❃ **BotVer :** `8.0.0`\n─── ∙ ₰ ∙ ───\n❃ **Support :** @ezzraez @rahkissyou\n─── ∙ ₰ ∙ ───",
+    )
     return
 
 
@@ -423,31 +427,34 @@ def paginate_help(page_number, loaded_modules, prefix):
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
         pairs = pairs[
-            modulo_page * number_of_rows: number_of_rows * (
-                modulo_page + 1)] + [
-            (custom.Button.inline(
-                "<ʙᴀᴄᴋ​", data="{}_prev({})".format(
-                    prefix, modulo_page)), custom.Button.inline(
-                        "ᴍᴇɴᴜ", data="{}_close({})".format(
-                            prefix, modulo_page)), custom.Button.inline(
-                                "ɴᴇxᴛ>>", data="{}_next({})".format(
-                                    prefix, modulo_page)), )]
+            modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
+        ] + [
+            (
+                custom.Button.inline(
+                    "<ʙᴀᴄᴋ​", data="{}_prev({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline(
+                    "ᴍᴇɴᴜ", data="{}_close({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline(
+                    "ɴᴇxᴛ>>", data="{}_next({})".format(prefix, modulo_page)
+                ),
+            )
+        ]
     return pairs
 
 
 with bot:
     try:
-        tgbot = TelegramClient(
-            "TG_BOT_TOKEN",
-            api_id=API_KEY,
-            api_hash=API_HASH).start(
-            bot_token=BOT_TOKEN)
+        tgbot = TelegramClient("TG_BOT_TOKEN", api_id=API_KEY, api_hash=API_HASH).start(
+            bot_token=BOT_TOKEN
+        )
 
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile("open")
             )
@@ -468,7 +475,9 @@ with bot:
                         "`The bot doesn't work! Please set the Bot Token and Username correctly. The module has been stopped.`"
                     )
             except Exception:
-                return await event.edit("₰ **Perintah di tolak, anda tidak memiliki izin**!")
+                return await event.edit(
+                    "₰ **Perintah di tolak, anda tidak memiliki izin**!"
+                )
 
         roselogo = INLINE_PIC
         plugins = CMD_HELP
@@ -476,7 +485,7 @@ with bot:
 
         # ------------------------------ChatAction--------------->
 
-        @ tgbot.on(events.ChatAction)
+        @tgbot.on(events.ChatAction)
         async def handler(event):
             if event.user_joined or event.user_added:
                 u = await event.client.get_entity(event.chat_id)
@@ -492,14 +501,13 @@ with bot:
                     f"₰ **RXEBOT: ** {DEFAULTUSER}\n\n"
                     f"➠ ** Ketik ** /rules untuk peraturan group\n",
                     buttons=[
-                        [Button.url("₰ channel ₰",
-                                    "https://t.me/rxeproject")],
+                        [Button.url("₰ channel ₰", "https://t.me/rxeproject")],
                     ],
                 )
 
         # ====================================InlineHandler===================================== #
 
-        @ tgbot.on(events.NewMessage(pattern="/start"))
+        @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
@@ -514,10 +522,12 @@ with bot:
                     ],
                 )
             else:
-                reply_pop_up_alert = f"!! DONT TOUCH !! TIDAK DAPAT MENGGUNAKAN MILIK{DEFAULTUSER}₰."
+                reply_pop_up_alert = (
+                    f"!! DONT TOUCH !! TIDAK DAPAT MENGGUNAKAN MILIK{DEFAULTUSER}₰."
+                )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(events.NewMessage(pattern="/ping"))
+        @tgbot.on(events.NewMessage(pattern="/ping"))
         async def handler(event):
             if event.message.from_id != uid:
                 start = datetime.now()
@@ -528,7 +538,7 @@ with bot:
                     f"**PONG!!**\n `{ms}ms`",
                 )
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(f"open_plugin")
             )
@@ -547,10 +557,12 @@ with bot:
                     link_preview=False,
                 )
             else:
-                reply_pop_up_alert = f"!! DONT TOUCH!! PERINTAH DIBATALKAN, ANDA TIDAK MEMILIKI HAK."
+                reply_pop_up_alert = (
+                    f"!! DONT TOUCH!! PERINTAH DIBATALKAN, ANDA TIDAK MEMILIKI HAK."
+                )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"nepo")
             )
@@ -564,7 +576,7 @@ with bot:
                 link_preview=False,
             )
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"about")
             )
@@ -574,7 +586,8 @@ with bot:
                 text = (
                     f"IM RXE.\n\n"
                     f"USERBOT YANG DIBUAT DARI BEBERAPA REPO LAINNYA.\n\n"
-                    f"SAYA DI MANAGE OLEH : @ezzraez & @rahkissyou\n\n")
+                    f"SAYA DI MANAGE OLEH : @ezzraez & @rahkissyou\n\n"
+                )
                 await event.edit(
                     text,
                     file=roselogo,
@@ -587,7 +600,7 @@ with bot:
                 reply_pop_up_alert = f"RXE USER : {DEFAULTUSER}\nRXE VER : 5.0\nRXE MODULE : {len(plugins)}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"settings")
             )
@@ -603,16 +616,17 @@ with bot:
                         [custom.Button.inline("RXE ALIVE", data="alive")],
                         [custom.Button.inline("RXE PMPERMIT", data="permirt")],
                         [custom.Button.inline("RXE PM BOT", data="pmbot")],
-                        [custom.Button.inline(
-                            "RXE MODE INLINE ", data="inline_mode")],
+                        [custom.Button.inline("RXE MODE INLINE ", data="inline_mode")],
                         [custom.Button.inline("RXE MENU", data="kanan")],
                     ],
                 )
             else:
-                reply_pop_up_alert = f"!! DONT TOUCH, PERINTAH DIBATALKAN. ANDA TIDAK MEMILIKI HAK"
+                reply_pop_up_alert = (
+                    f"!! DONT TOUCH, PERINTAH DIBATALKAN. ANDA TIDAK MEMILIKI HAK"
+                )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"kanan")
             )
@@ -626,15 +640,14 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("RXE UPDATE", data="pembaruan")],
-                        [custom.Button.inline(
-                            "RXE SETTINGS", data="settings")],
+                        [custom.Button.inline("RXE SETTINGS", data="settings")],
                     ],
                 )
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"alive")
             )
@@ -664,10 +677,12 @@ with bot:
                     ],
                 )
             else:
-                reply_pop_up_alert = f"!! DONT TOUCH !! PERINTAH DIBATALKAN, ANDA TIDAK MEMILIKI HAK"
+                reply_pop_up_alert = (
+                    f"!! DONT TOUCH !! PERINTAH DIBATALKAN, ANDA TIDAK MEMILIKI HAK"
+                )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"permirt")
             )
@@ -695,10 +710,12 @@ with bot:
                     ],
                 )
             else:
-                reply_pop_up_alert = f"!! DONT TOUCH !! PERINTAH DIBATALKAN, ANDA TIDAK MEMILIKI HAK"
+                reply_pop_up_alert = (
+                    f"!! DONT TOUCH !! PERINTAH DIBATALKAN, ANDA TIDAK MEMILIKI HAK"
+                )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"inline_mode")
             )
@@ -711,7 +728,8 @@ with bot:
                     f".set var EMOJI_HELP` [**EMOT YANG MAU DI PAKE**]\n"
                     f"CUSTOM EMOT COMMAND .helpme\n\n"
                     f".set var INLINE_PIC` [**TARUH LINK DISINI**]\n"
-                    f"GANTI FOTO DI COMMAND.helpme\n\n")
+                    f"GANTI FOTO DI COMMAND.helpme\n\n"
+                )
                 await event.edit(
                     text,
                     file=roselogo,
@@ -724,10 +742,12 @@ with bot:
                     ],
                 )
             else:
-                reply_pop_up_alert = f"!! DONT TOUCH !! PERINTAH DIBATALKAN, ANDA TIDAK MEMILIKI HAK"
+                reply_pop_up_alert = (
+                    f"!! DONT TOUCH !! PERINTAH DIBATALKAN, ANDA TIDAK MEMILIKI HAK"
+                )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"pmbot")
             )
@@ -737,7 +757,8 @@ with bot:
                 text = (
                     f"╔══════════════════════════════════════════╗\n"
                     f"NAMA MODULE **pmbot**\n\n"
-                    f"set var START_WELCOME [**TEKS YANG DI INGINKAN**] \n")
+                    f"set var START_WELCOME [**TEKS YANG DI INGINKAN**] \n"
+                )
                 await event.edit(
                     text,
                     file=roselogo,
@@ -753,7 +774,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"pembaruan")
             )
@@ -783,7 +804,7 @@ with bot:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"ping")
             )
@@ -806,7 +827,7 @@ with bot:
                 reply_pop_up_alert = f"PONG!!\n `{ms}ms`"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"dyno_usage")
             )
@@ -814,13 +835,11 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if apps.get("app_uuid") == app.id:
                 apps.get("quota_used") / 60
-                AppPercentage = math.floor(
-                    apps.get("quota_used") * 100 / quota)
+                AppPercentage = math.floor(apps.get("quota_used") * 100 / quota)
                 text = (
                     "╔═.✾. ══════════════════╗\n"
                     "**𝑹𝑿𝑬 𝑫𝒀𝑵𝑶 𝑼𝑺𝑬:**\n"
                     "╚══════════════════.✾. ═╝\n"
-
                     "──────────────────────────────────\n"
                     "**𝑩𝑨𝑻𝑨𝑺 𝑷𝑬𝑵𝑮𝑮𝑼𝑵𝑨𝑨𝑵 𝑹𝑿𝑬 𝑩𝑼𝑳𝑨𝑵 𝑰𝑵𝑰:**\n"
                     "──────────────────────────────────\n"
@@ -829,7 +848,6 @@ with bot:
                     f"**𝑹𝑿𝑬 𝑼𝑺𝑬𝑹 :** {ALIVE_NAME}"
                     f"**𝑴𝑨𝑺𝑨 𝑨𝑲𝑻𝑰𝑭 𝑹𝑿𝑬 𝑩𝑼𝑳𝑨𝑵 𝑰𝑵𝑰**{day}**𝑯𝑨𝑹𝑰**"
                     f"╰──────────────────────────────────╯\n"
-
                     "╔═.✾. ══════╗\n"
                     "  **𝑹-𝑿-𝑬** \n"
                     "╚═══════.✾. ═╝\n"
@@ -843,10 +861,12 @@ with bot:
                     ],
                 )
             else:
-                reply_pop_up_alert = f"!! DONT TOUCH !! PERINTAH DITOLAK, ANDA TIDAK MEMILIKI HAK"
+                reply_pop_up_alert = (
+                    f"!! DONT TOUCH !! PERINTAH DITOLAK, ANDA TIDAK MEMILIKI HAK"
+                )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"restart_bot")
             )
@@ -863,7 +883,7 @@ with bot:
                     ],
                 )
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"closed")
             )
@@ -875,13 +895,12 @@ with bot:
                     text,
                     file=roselogo,
                     link_preview=True,
-                    buttons=[
-                        Button.url("EZZRA", "t.me/ezzraez")]
-                    [Button.url("RAKHIII", "t.me/rahkissyou")
-                     ]
+                    buttons=[Button.url("EZZRA", "t.me/ezzraez")][
+                        Button.url("RAKHIII", "t.me/rahkissyou")
+                    ],
                 )
 
-        @ tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
             result = None
@@ -909,29 +928,23 @@ with bot:
                     text="""𝑹𝑿𝑬 HANDLER""",
                     buttons=[
                         [
-                            custom.Button.url(
-                                "EZZRA​",
-                                "https://t.me/ezzraez"),
-                            custom.Button.url(
-                                "RAHKII​",
-                                "https://t.me/rahkissyou"),
+                            custom.Button.url("EZZRA​", "https://t.me/ezzraez"),
+                            custom.Button.url("RAHKII​", "https://t.me/rahkissyou"),
                         ],
                     ],
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
-                    event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(
-                    current_page_number + 1, dugmeler, "helpme")
+                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
@@ -940,7 +953,7 @@ with bot:
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_close\((.+?)\)")
             )
@@ -956,28 +969,26 @@ with bot:
                             Button.url("𝑹𝑿𝑬 𝑺𝑼𝑷𝑷𝑶𝑹𝑻", "t.me/ezzrasupport"),
                             Button.url("𝑹𝑿𝑬 𝑪𝑯𝑨𝑵𝑵𝑬𝑳", "t.me/rxechannel"),
                         ],
-                        [custom.Button.inline(
-                            "𝑹𝑿𝑬 𝑴𝑬𝑵𝑼", data="open_plugin")],
+                        [custom.Button.inline("𝑹𝑿𝑬 𝑴𝑬𝑵𝑼", data="open_plugin")],
                         [custom.Button.inline("𝘾𝙇𝙊𝙎𝙀 𝙈𝙀𝙉𝙐", b"close")],
                     ],
                 )
 
-        @ tgbot.on(events.CallbackQuery(data=b"close"))
+        @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
                 (custom.Button.inline("Open Menu", data="open_plugin"),),
             ]
             await event.edit(f"Menu Ditutup! ", buttons=buttons)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number = int(
-                    event.data_match.group(1).decode("UTF-8"))
+                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
                 buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
@@ -989,7 +1000,7 @@ with bot:
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"ub_modul_(.*)")
             )
@@ -1018,9 +1029,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = (
-                    f"DONT TOUCH, PERINTAH DIBATALKAN. PENGGUNA DI IZINKAN {DEFAULTUSER}."
-                )
+                reply_pop_up_alert = f"DONT TOUCH, PERINTAH DIBATALKAN. PENGGUNA DI IZINKAN {DEFAULTUSER}."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
@@ -1034,5 +1043,6 @@ with bot:
     except BaseException:
         LOGS.info(
             "BOTLOG_CHATID Environment Variable Isn't a "
-            "Valid Entity. Please Check Your Environment variables/config.env File.")
+            "Valid Entity. Please Check Your Environment variables/config.env File."
+        )
         quit(1)

@@ -1,4 +1,4 @@
-ame: PyLint
+name: PyLint
 on: push
 jobs:
   PEP8:
